@@ -5,14 +5,11 @@ if [ "$#" -ne 1 ]; then
   exit 1
 fi
 
-phrase="$1"
-
-IFS=' |-' read -r -a words <<< "$phrase"
+IFS=' |-' read -r -a words <<< "$1"
 
 for word in "${words[@]}"; do
-  firstLetterUppercase="${word^}"
-  firstCharacter="${firstLetterUppercase:0:1}"
-  acronym+="$firstCharacter"
+  firstCharacter="${word:0:1}"
+  acronym+="${firstCharacter^}"
 done
 
 echo "$acronym"

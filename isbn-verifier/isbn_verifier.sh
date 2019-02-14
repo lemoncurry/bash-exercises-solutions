@@ -5,7 +5,7 @@ isbn_canditate=${1?:'Es darf nur genau ein Parameter angegeben werden'}
 isbnWithoutDahses="${isbn_canditate//-/}"
 numberOfDigits=${#isbnWithoutDahses}
 
-if [ "$numberOfDigits" -ne 10 ]; then
+if [[ "$numberOfDigits" != 10 ]]; then
   echo 'Keine gültige ISBN-10-Nummer.'
   exit 1
 fi

@@ -30,7 +30,7 @@ done
 
 rest=$(($sum%11))
 
-if [ "$rest" -ne 0 ]; then
+if [[ "$rest" != 0 ]]; then
   echo 'Keine gültige ISBN-10-Nummer.'
   exit 1
 else
